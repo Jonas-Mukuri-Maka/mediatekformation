@@ -6,6 +6,7 @@ use App\Repository\FormationRepository;
 use DateTimeInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -16,7 +17,7 @@ class Formation
     /**
      * Début de chemin vers les images
      */
-    private const cheminImage = "https://i.ytimg.com/vi/";
+    private const CHEMINIMAGE = "https://i.ytimg.com/vi/";
     
     /**
      * @ORM\Id
@@ -26,12 +27,13 @@ class Formation
     private $id;
 
     /**
-     * @ORM\Column(type="datetime", nullable=true)
+     * @ORM\Column(type="datetime", nullable=false)
+     * @Assert\LessThanOrEqual("now")
      */
     private $publishedAt;
 
     /**
-     * @ORM\Column(type="string", length=100, nullable=true)
+     * @ORM\Column(type="string", length=100, nullable=false)
      */
     private $title;
 
@@ -41,7 +43,7 @@ class Formation
     private $description;
 
     /**
-     * @ORM\Column(type="string", length=20, nullable=true)
+     * @ORM\Column(type="string", length=20, nullable=false)
      */
     private $videoId;
 
@@ -110,12 +112,12 @@ class Formation
 
     public function getMiniature(): ?string
     {
-        return self::cheminImage.$this->videoId."/default.jpg";
+        return self::CHEMINIMAGE.$this->videoId."/default.jpg";
     }
 
     public function getPicture(): ?string
     {
-        return self::cheminImage.$this->videoId."/hqdefault.jpg";
+        return self::CHEMINIMAGE.$this->videoId."/hqdefault.jpg";
     }
 
     public function getVideoId(): ?string
