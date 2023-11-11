@@ -40,7 +40,7 @@ class AdminFormationsController extends AbstractController {
     }
     
     /**
-     * @Route("/admin/formations", name="admin.formations")
+     * @Route("/admin", name="admin.formations")
      * @return Response
      */
     public function index(): Response{
@@ -60,7 +60,7 @@ class AdminFormationsController extends AbstractController {
 
 
     /**
-     * @Route("/admin/formation/suppr/{id}", name="admin.formation.suppr")
+     * @Route("/admin/suppr/{id}", name="admin.formation.suppr")
      * @param Formation $formation
      * @return Response
      */
@@ -70,7 +70,7 @@ class AdminFormationsController extends AbstractController {
     }
     
     /**
-     * @Route("/admin/formation/ajout", name="admin.formation.ajout")
+     * @Route("/admin/ajout", name="admin.formation.ajout")
      * @param Request $request
      * @return Response
      */   
@@ -92,7 +92,7 @@ class AdminFormationsController extends AbstractController {
 
 
     /**
-     * @Route("/admin/formation/edit/{id}", name="admin.formation.edit")
+     * @Route("/admin/edit/{id}", name="admin.formation.edit")
      * @param Formation $formation
      * @param Request $request
      * @return Response
@@ -147,7 +147,7 @@ class AdminFormationsController extends AbstractController {
     }  
     
     /**
-     * @Route("/admin/formations/formation/{id}", name="admin.formations.showone")
+     * @Route("/formations/formation/{id}", name="admin.formations.showone")
      * @param type $id
      * @return Response
      */
