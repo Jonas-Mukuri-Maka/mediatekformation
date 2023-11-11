@@ -17,7 +17,6 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class AdminFormationsController extends AbstractController {
 
-    private $test;
     /**
      * 
      * @var FormationRepository
@@ -41,7 +40,7 @@ class AdminFormationsController extends AbstractController {
     }
     
     /**
-     * @Route("/admin", name="admin.formations")
+     * @Route("/admin/formations", name="admin.formations")
      * @return Response
      */
     public function index(): Response{
@@ -61,7 +60,7 @@ class AdminFormationsController extends AbstractController {
 
 
     /**
-     * @Route("/admin/suppr/{id}", name="admin.formation.suppr")
+     * @Route("/admin/formation/suppr/{id}", name="admin.formation.suppr")
      * @param Formation $formation
      * @return Response
      */
@@ -71,7 +70,7 @@ class AdminFormationsController extends AbstractController {
     }
     
     /**
-     * @Route("/admin/ajout", name="admin.formation.ajout")
+     * @Route("/admin/formation/ajout", name="admin.formation.ajout")
      * @param Request $request
      * @return Response
      */   
@@ -93,7 +92,7 @@ class AdminFormationsController extends AbstractController {
 
 
     /**
-     * @Route("/admin/edit/{id}", name="admin.formation.edit")
+     * @Route("/admin/formation/edit/{id}", name="admin.formation.edit")
      * @param Formation $formation
      * @param Request $request
      * @return Response
@@ -148,7 +147,7 @@ class AdminFormationsController extends AbstractController {
     }  
     
     /**
-     * @Route("/formations/formation/{id}", name="admin.formations.showone")
+     * @Route("/admin/formations/formation/{id}", name="admin.formations.showone")
      * @param type $id
      * @return Response
      */
