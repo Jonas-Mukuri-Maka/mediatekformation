@@ -54,6 +54,7 @@ class Formation
 
     /**
      * @ORM\ManyToMany(targetEntity=Categorie::class, inversedBy="formations")
+     * @Assert\Unique
      */
     private $categories;
 

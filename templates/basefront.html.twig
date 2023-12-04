@@ -4,6 +4,9 @@
 {% block stylesheets %}{% endblock %}
 {% block top %}
     <div class="container">
+        <div class="text-end">
+            <a href="{{ path('oauth_login') }}" class='btn btn-primary'>se connecter</a>
+        </div> 
         <!-- titre -->
         <div class="text-left">
             <img src="{{ app.request.getBasePath()~'/banniere.jpg' }}" alt="image de banniere">
@@ -20,7 +23,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ path('playlists') }}">Playlists</a>
-                    </li>                    
+                    </li>
                 </ul>
             </div>
         </nav>        
