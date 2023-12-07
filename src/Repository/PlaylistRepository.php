@@ -56,7 +56,6 @@ class PlaylistRepository extends ServiceEntityRepository
     
     /**
      * Retourne toutes les playlists triées sur le nombre de formations
-     * @param type $champ
      * @param type $ordre
      * @return Playlist[]
      */
@@ -64,7 +63,7 @@ class PlaylistRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('p')
                 ->leftjoin('p.formations', 'f')
                 ->groupBy('p.id')
-                ->orderBy('p.formations|length', $ordre)
+                ->orderBy('count(p.name)', $ordre)
                 ->getQuery()
                 ->getResult();
     }
